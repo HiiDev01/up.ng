@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --primary: #fff;
+  --light-primary: #cecece;
+  --secondary: #303956;
+  --light-secondary: #f5f7fa;
+  --main: #5465fa;
+  --light-main: rgba(82, 99, 250, 0.252);
+  --text: #303841;
+  --light-text: #666;
+  --rating: #f8c535;
+  --box-shadow: #d7d6d6;
+  --font-one: "Poppins", sans-serif;
+  --font-two: "Inter", sans-serif;
+  --font-three: "Exo 2", sans-serif;
+  --font-four: "Roboto", sans-serif;
+}
+body{
+  height: 200vh;
+}

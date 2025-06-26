@@ -1,0 +1,135 @@
+.home{
+  width: 100%;
+  height: auto;
+}
+header{
+  width: 100%;
+  height: 95vh;
+  background: linear-gradient(to top, rgba(39, 44, 51, .9),rgba(39, 44, 51, .9)), url("/hmbg2.jpg");
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.HeroSec{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: flex-end;
+  padding: 0px 0px 0px 7%;
+}
+.HeroDet{
+  width: auto;
+}
+.HeroDet h1{
+  font-size: 4.5rem;
+  color: var(--primary);
+  font-weight: bold;
+  font-family: var(--font-three);
+  text-transform: capitalize;
+  margin: 0px 0px 15px 0px;
+}
+.HeroDet p{
+  font-size: 1.3rem;
+  color: var(--primary);
+  font-family: var(--font-four);
+  line-height: 1.5;
+  word-spacing: 1.1px;
+  font-weight: 400;
+  margin: 0px 0px 30px 0px;
+}
+
+.browseLink{
+  font-family: var(--font-three);
+  color: var( --text);
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-block;
+  background-color: var(--primary);
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 10px;
+  margin: 0px 0px 20px 0px;
+  cursor: pointer;
+}
+.teacherLink{
+  font-family: var(--font-four);
+  display: block;
+  color: var(--light-primary);
+  cursor: pointer;
+}
+.HeroIntroCon{
+  width: 100%;
+  padding: 10px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: var(--primary);
+  box-shadow: 0px 0px 3px var(--box-shadow);
+}
+.HeroIntro{
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+  gap: 15px;
+}
+.HeroIconCon{
+  min-width: 60px;
+  height: 60px;
+  background-color: var(--main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--primary);
+}
+.HeroDetCon{
+  padding: 10px 0px;
+}
+.HeroDetCon h5{
+  font-size: 1.05rem;
+  color: var( --text);
+  font-family: var(--font-three);
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 0px 0px 5px 0px;
+}
+.HeroDetCon p{
+  font-size: 0.8rem;
+  color: var(--light-text);
+  font-family: var(--font-one);
+  font-weight: 400;
+}
+.main{
+  width: 100%;
+  background-color: var(--light-secondary);
+  padding: 30px 5%;
+}
+.mainBlogCon{
+  width: 100%;
+  border: 1px solid black;
+}
+.mainBlogHeading{
+  font-size: 1.1rem;
+  font-family: var(--font-three);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--text);
+  font-style: normal;
+  word-spacing: 3px;
+  position: relative;
+  margin: 0px 0px 20px 0px;
+}
+.mainBlogHeading::before{
+  position: absolute;
+  content: "";
+  width: 87%;
+  height: 1.5px;
+  background-color: var(--light-primary);
+  top: 50%;
+  right: 0%;
+}
