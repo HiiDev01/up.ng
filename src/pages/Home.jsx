@@ -1,10 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from '../layouts/Nav'
 import { PiVideoFill,PiClockClockwiseBold } from "react-icons/pi";
 import { BsShieldFillCheck } from "react-icons/bs";
+import BlogsCards from '../components/BlogsCards';
+import LatestBlogCard from '../components/LatestBlogCard';
 import '../styles/Home.css'
 
 const Home = () => {
+  const [homeBlog, setHomeBlogs] = useState([]);
+  const [error, setError] = useState(null);
+  const latestBlog = homeBlog[1];
+
+  useEffect(()=>{
+    const handleFetchBlogs = async ()=>{
+      try {
+        const res = await fetch('http://localhost:5000/blogs')
+        if(!res.ok){
+          setError('erorr fething data');
+          throw new Error('erroe fecthing data');
+        }
+        const data = await res.json();
+        console.log(data)
+        setHomeBlogs(data);
+        setError(null)
+      } catch (error) {
+        console.log(error, 'error fetching blog card')
+        setError('erorr fething data');
+      }
+    }
+    handleFetchBlogs();
+  },[])
   return (
     <div className='home'>
       <header>
@@ -55,10 +80,10 @@ const Home = () => {
         <div className='mainBlogCon'>
           <h2 className='mainBlogHeading'>from the blog</h2>
           <div className='mainBlogItemCon'>
-            <div className="mainBlogItems"></div>
-            <div className="mainBlogItems"></div>
-            <div className="mainBlogItems"></div>
+            {error && (<p>{error}</p>)}
+            <BlogsCards homeBlog={homeBlog}/>
           </div>
+          <LatestBlogCard latestBlog={latestBlog}/>
         </div>
       </main>
     </div>

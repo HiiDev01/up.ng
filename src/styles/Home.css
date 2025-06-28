@@ -133,3 +133,128 @@ header{
   top: 50%;
   right: 0%;
 }
+.mainBlogItemCon{
+  display: flex;
+  align-items: center;
+  border: 1px solid red;
+  gap: 20px;
+  margin: 0px 0px 20px 0px;
+}
+.mainBlogItems{
+  flex: 1;
+  border: 1px solid blue;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.mainBlogItems .overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 15px 20px 15px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.overlayTop{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.overlayTop p{
+  font-size: 0.8rem;
+  font-family: var(--font-four);
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.5px;
+}
+.overlayTop p span{
+  display: flex;
+  align-items: center;
+}
+.overlayTop .iconCon{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid var(--light-primary);
+  overflow: hidden;
+}
+.overlayTop .iconCon img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.CourseDet{
+  width: 100%;
+}
+.CourseDet h3{
+  font-size: .92rem;
+  color: var(  --light-text);
+  font-weight: 500;
+  font-family: var(--font-four);
+  text-transform: uppercase;
+  margin: 0px 0px 5px 0px;
+}
+.CourseDet p{
+  font-size: 0.92rem;
+  color: var(--light-primary);
+  font-weight: 500;
+  font-family: var(--font-three);
+}
+
+.LBlogCon{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-start;
+  border: 1px solid red;
+  background-color: var(--primary);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+}
+.LBlogItem{
+  flex: 1;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.LBlogIcon{
+  width: 70px;
+  height: 70px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.LBlogIcon img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.LBlogDet{
+  width: auto;
+}
+.LBlogDet h3{
+  font-size: .9rem;
+  color: var( --text);
+  font-family: var(--font-three);
+  text-transform: capitalize;
+  margin: 0px 0px 5px 0px;
+  font-weight: 700;
+}
+.LBlogDet p{
+  font-size: .85rem;
+  font-family: var(--font-four);
+  color: var(--light-text);
+  font-weight: 400;
+}

@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "123456",
+      "isPremium": true
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Complete HTML & CSS Bootcamp",
+      "description": "Learn to build websites from scratch using HTML and CSS.",
+      "thumbnail": "https://yourcdn.com/thumbs/htmlcss.png",
+      "category": "Frontend",
+      "instructor": "Jane Smith"
+    }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "courseId": 1,
+      "title": "Introduction to HTML",
+      "videoUrl": "https://yourcdn.com/videos/html-intro.mp4",
+      "isFree": true
+    },
+    {
+      "id": 2,
+      "courseId": 1,
+      "title": "Semantic HTML",
+      "videoUrl": "https://yourcdn.com/videos/semantic-html.mp4",
+      "isFree": false
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": 1,
+      "userId": 1,
+      "type": "monthly",
+      "startDate": "2025-06-01",
+      "endDate": "2025-07-01",
+      "status": "active"
+    }
+  ],
+  "enrollments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "courseId": 1,
+      "progress": 2
+    }
+  ],
+  "blogs": [
+      {
+       "id": 1,
+       "title": "Why Next.js is the Future of Fullstack React",
+       "heading": "Next js",
+       "author": "Samuel N.",
+       "authorImage": "/icon2.png",
+       "coverImage": "/nextjs.png",
+       "excerpt": "Next.js brings SSR, routing, and API support to React — making it the go-to framework for production-ready apps.",
+       "content": "Next.js, built on top of React, provides developers with tools for server-side rendering (SSR), static site generation (SSG), and API routing. In 2025, the App Router in Next 14+ has revolutionized how developers structure their apps. It supports nested layouts, loading UI, and better performance...",
+       "date": "2025-06-25 07:46 AM"
+     },
+     {
+      "id": 2,
+      "title": "Getting Started with React.js in 2025",
+      "heading": "React js",
+      "author": "Hii Dev",
+      "authorImage": "/icon1.png",
+      "coverImage": "/reactjs.png",
+      "excerpt": "React.js remains one of the top frontend frameworks in 2025. Learn how to get started, set up your environment, and build your first component.",
+      "content": "React.js is a JavaScript library for building user interfaces, developed by Facebook. In 2025, React continues to dominate because of its performance, community, and ecosystem. To start, install Node.js, use Create React App or Vite, and begin by writing functional components using JSX...",
+      "date": "2025-06-26 07:46 AM"
+    },
+    {
+      "id": 3,
+      "title": "Mastering Modern CSS Layouts: Flex & Grid ",
+      "heading": "CSS",
+      "author": "Chidera E.",
+      "authorImage": "/icon3.png",
+      "coverImage": "/css.png",
+      "excerpt": "Stop using floats and learn modern layout tools like Flexbox, Grid, and responsive units like clamp() for better CSS in 2025.",
+      "content": "CSS has evolved beyond floats and clearfix hacks. Today, layout techniques like Flexbox and CSS Grid allow developers to build responsive and accessible designs effortlessly. Learn how to use `display: grid`, `grid-template-columns`, and combine with `clamp()` to achieve responsive typography without media queries...",
+      "date": "2025-06-24 07:46 AM"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Isaac O.",
+      "email": "isaac@example.com",
+      "message": "How do I upgrade to premium?"
+    }
+  ]
+}
