@@ -5,19 +5,21 @@ import { BsShieldFillCheck } from "react-icons/bs";
 import BlogsCards from '../components/BlogsCards';
 import LatestBlogCard from '../components/LatestBlogCard';
 import '../styles/Home.css'
+import LearningCards from '../components/LearningCards';
 
 const Home = () => {
   const [homeBlog, setHomeBlogs] = useState([]);
+  const [courses, setCourses] = useState([])
   const [error, setError] = useState(null);
   const latestBlog = homeBlog[1];
+  const featuredCourse = homeBlog[5];
 
   useEffect(()=>{
     const handleFetchBlogs = async ()=>{
       try {
         const res = await fetch('http://localhost:5000/blogs')
         if(!res.ok){
-          setError('erorr fething data');
-          throw new Error('erroe fecthing data');
+          throw new Error('error fecthing data');
         }
         const data = await res.json();
         console.log(data)
@@ -30,6 +32,26 @@ const Home = () => {
     }
     handleFetchBlogs();
   },[])
+
+  useEffect(()=>{
+    const fetchCourse = async () =>{
+      try {
+        const res = await fetch('http://localhost:5000/courses')
+        if(!res.ok){
+          throw new Error('erroe fecthing data');
+        }
+        const data = await res.json();
+        console.log(data)
+        const slicedData = data.slice(0, 6)
+        setCourses(slicedData)
+        setError(null);
+      } catch (error) {
+        console.log(error, 'error fecthing data')
+        setError('erorr fetching data');
+      }
+    }
+    fetchCourse()
+  }, [])
   return (
     <div className='home'>
       <header>
@@ -80,10 +102,35 @@ const Home = () => {
         <div className='mainBlogCon'>
           <h2 className='mainBlogHeading'>from the blog</h2>
           <div className='mainBlogItemCon'>
-            {error && (<p>{error}</p>)}
+            {error && <p>{error}</p>}
             <BlogsCards homeBlog={homeBlog}/>
           </div>
           <LatestBlogCard latestBlog={latestBlog}/>
+        </div>
+
+        <div className='mainLearningCon'>
+          <h2 className='mainLearningHeading'>Learning Paths</h2>
+          <div className="mainLearningWrapper">
+             {error && <p>{error}</p>}
+              <LearningCards courses={courses}/>
+          </div>
+        </div>
+
+        <div className='mainFeatureCon'>
+          <h2 className='mainLearningHeading'>features Paths</h2>
+          <div className='mainFeatureWrapper'>
+            {error && <p>{error}</p>}
+            {featuredCourse.map((feature)=>(
+              <div className='featureCourses' key={feature.id}>
+                <div className="featureCoursesImgCon"></div>
+                <div>
+                  <h2>{feature.heading}</h2>
+                  <p>{feature.instructor}</p>
+                  <p></p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
     </div>

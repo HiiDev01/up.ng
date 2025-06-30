@@ -9,7 +9,7 @@ const BlogsCards = ({homeBlog}) => {
           key={blog.id}
           className='mainBlogItems'
           style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(39, 44, 51, 0.84),rgba(39, 44, 51, 0.84)), url(${blog.coverImage})`,
+            backgroundImage: `linear-gradient(to bottom, rgba(82, 99, 250, 0.25),rgba(82, 99, 250, 0.25)), url(${blog.coverImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
