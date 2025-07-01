@@ -6,13 +6,21 @@ import BlogsCards from '../components/BlogsCards';
 import LatestBlogCard from '../components/LatestBlogCard';
 import '../styles/Home.css'
 import LearningCards from '../components/LearningCards';
+import FeaturedCourses from '../components/FeaturedCourses';
+import Rating from '../components/Rating';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Home = () => {
   const [homeBlog, setHomeBlogs] = useState([]);
   const [courses, setCourses] = useState([])
   const [error, setError] = useState(null);
+  const [reviews, setReviews] = useState([])
   const latestBlog = homeBlog[1];
-  const featuredCourse = homeBlog[5];
+  const mainCourse = courses.slice(0, 6)
+  const featuredCourse = courses.slice(6, 10);
+  const slicedReviews = reviews.slice(0, 4);
 
   useEffect(()=>{
     const handleFetchBlogs = async ()=>{
@@ -22,7 +30,6 @@ const Home = () => {
           throw new Error('error fecthing data');
         }
         const data = await res.json();
-        console.log(data)
         setHomeBlogs(data);
         setError(null)
       } catch (error) {
@@ -41,9 +48,8 @@ const Home = () => {
           throw new Error('erroe fecthing data');
         }
         const data = await res.json();
-        console.log(data)
-        const slicedData = data.slice(0, 6)
-        setCourses(slicedData)
+       /* const slicedData = data.slice(0, 6)*/
+        setCourses(data)
         setError(null);
       } catch (error) {
         console.log(error, 'error fecthing data')
@@ -52,6 +58,58 @@ const Home = () => {
     }
     fetchCourse()
   }, [])
+
+  useEffect(()=>{
+    const fetchReview = async ()=>{
+      try {
+        const res = await fetch('http://localhost:5000/reviews')
+        if(!res.ok){
+           throw new Error('error fecthing reviews data');
+        }
+        const data = await res.json();
+        setReviews(data);
+      } catch (error) {
+        console.log(error, 'error fecthing reviews data')
+        setError('erorr fetching reviews data');
+      }
+    }
+    fetchReview();
+  }, [])
+
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
   return (
     <div className='home'>
       <header>
@@ -112,7 +170,7 @@ const Home = () => {
           <h2 className='mainLearningHeading'>Learning Paths</h2>
           <div className="mainLearningWrapper">
              {error && <p>{error}</p>}
-              <LearningCards courses={courses}/>
+              <LearningCards courses={mainCourse}/>
           </div>
         </div>
 
@@ -120,16 +178,34 @@ const Home = () => {
           <h2 className='mainLearningHeading'>features Paths</h2>
           <div className='mainFeatureWrapper'>
             {error && <p>{error}</p>}
-            {featuredCourse.map((feature)=>(
-              <div className='featureCourses' key={feature.id}>
-                <div className="featureCoursesImgCon"></div>
-                <div>
-                  <h2>{feature.heading}</h2>
-                  <p>{feature.instructor}</p>
-                  <p></p>
+            <FeaturedCourses featuredCourse={featuredCourse}/>
+          </div>
+        </div>
+
+        <div className="mainFeedBackCon">
+          <div className="mainFeedBackHeading">
+            <h1>Feedback</h1>
+            <p>What are the awesome testimony from our previous student. what are they  saying about the platform after attaining their goals.</p>
+          </div>
+          <div className='FeedBackWrapper'>
+            <Slider {...settings}>
+            {slicedReviews.map((reviews)=>(
+              <div className='reviewCard' key={reviews.id}>
+                <div className='reviewPara'>
+                  <p>{reviews.comment}</p>
+                </div>
+                <div className='reveiwProfile'>
+                  <div className="reviewImgCon">
+                    <img src={reviews.profile} alt={reviews.author} />
+                  </div>
+                  <div>
+                    <h2>{reviews.author}</h2>
+                    <Rating rating={reviews.rating}/>
+                  </div>
                 </div>
               </div>
             ))}
+            </Slider>
           </div>
         </div>
       </main>

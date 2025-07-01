@@ -17,6 +17,8 @@
       "thumbnail": "/html.png",
       "category": "Frontend",
       "instructor": "Jane Doe",
+      "rating": 4.5,
+      "hours": 1.5,
       "numberOfLessons": 12
     },
     {
@@ -27,6 +29,8 @@
       "thumbnail": "/css.png",
       "category": "Frontend",
       "instructor": "John Smith",
+      "rating": 4,
+      "hours": 3,
       "numberOfLessons": 15
     },
     {
@@ -37,6 +41,8 @@
       "thumbnail": "/javascript.png",
       "category": "Frontend",
       "instructor": "Emily Clark",
+      "rating": 3,
+      "hours": 4,
       "numberOfLessons": 20
     },
     {
@@ -47,6 +53,8 @@
       "thumbnail": "/reactjs.png",
       "category": "Frontend",
       "instructor": "Michael Brown",
+      "rating": 5,
+      "hours": 2,
       "numberOfLessons": 18
     },
     {
@@ -57,6 +65,8 @@
       "thumbnail": "/nextjs.png",
       "category": "Fullstack",
       "instructor": "Olivia Johnson",
+      "rating": 3.5,
+      "hours": 4,
       "numberOfLessons": 16
     },
     {
@@ -67,6 +77,8 @@
       "thumbnail": "/nodejs.png",
       "category": "Backend",
       "instructor": "Liam Davis",
+      "rating": 5,
+      "hours": 3,
       "numberOfLessons": 14
     },
     {
@@ -77,6 +89,8 @@
       "thumbnail": "/typescript.png",
       "category": "Frontend",
       "instructor": "Sophia Lee",
+      "rating": 4,
+      "hours": 4,
       "numberOfLessons": 13
     },
     {
@@ -84,9 +98,11 @@
       "title": "Supabase Crash Course",
       "heading": "supabase",
       "description": "Build apps fast using Supabase authentication, storage, and real-time DB.",
-      "thumbnail": "/supabase.png",
+      "thumbnail": "/supabse.png",
       "category": "Fullstack",
       "instructor": "Noah Wilson",
+      "rating": 3.5,
+      "hours": 2,
       "numberOfLessons": 10
     },
     {
@@ -97,15 +113,20 @@
       "thumbnail": "/firebase.png",
       "category": "Backend",
       "instructor": "Ava Martinez",
+      "rating": 4,
+      "hours": 4,
       "numberOfLessons": 11
     },
     {
       "id": 10,
       "title": "PHP Web Development Bootcamp",
+      "heading": "Php for Web",
       "description": "Learn server-side programming with PHP, forms, sessions, and MySQL.",
       "thumbnail": "/php.png",
       "category": "Backend",
       "instructor": "Ethan Garcia",
+      "rating": 4.5,
+      "hours": 3,
       "numberOfLessons": 17
     }
   ],
@@ -185,5 +206,56 @@
       "email": "isaac@example.com",
       "message": "How do I upgrade to premium?"
     }
+  ],
+  "reviews":[
+    {
+      "id": 1,
+      "courseId": 1,
+      "author": "Samuel Johnson",
+      "comment": "This HTML course was incredibly helpful. The instructor covered everything from basic tags to more advanced semantic HTML with clear explanations. I now feel confident structuring any webpage properly and understand the importance of accessibility.",
+      "rating": 5,
+      "profile": "/icon1.png"
+    },
+    {
+      "id": 2,
+      "courseId": 1,
+      "author": "Amina Yusuf",
+      "comment": "I loved how beginner-friendly this course was. The pacing was perfect, and the visuals made it easier to follow along. While I do wish there were more coding exercises at the end of each section, I still learned a lot about building structured pages.",
+      "rating": 4,
+      "profile": "/icon1.png"
+    },
+    {
+      "id": 3,
+      "courseId": 1,
+      "author": "David Kim",
+      "comment": "I had some knowledge of HTML before this, but this course helped me really understand the 'why' behind certain tags and best practices. It’s not just about writing code—it’s about writing clean, meaningful markup.",
+      "rating": 4.5,
+      "profile": "/icon1.png"
+    },
+    {
+      "id": 4,
+      "courseId": 2,
+      "author": "Fatima Bello",
+      "comment": "The CSS course exceeded my expectations. I finally grasped how Flexbox and Grid work. The real-world layout examples and design breakdowns helped me a lot. The course design was beautiful and consistent with what it was teaching.",
+      "rating": 5,
+      "profile": "/icon1.png"
+    },
+    {
+      "id": 5,
+      "courseId": 3,
+      "author": "John Adewale",
+      "comment": "This JavaScript course laid a solid foundation for understanding how JS works. The sections on functions, objects, and arrays were particularly well explained. However, I think more interactive challenges would have made it even better.",
+      "rating": 4,
+      "profile": "/icon1.png"
+    },
+    {
+      "id": 6,
+      "courseId": 4,
+      "author": "Ezekiel Umeh",
+      "comment": "I’ve taken several React courses, and this one stood out because of how practical it is. The instructor explained functional components and hooks in such a simple way that even a beginner can build a project by the end. Highly recommended.",
+      "rating": 5,
+      "profile": "/icon1.png"
+    }
   ]
+
 }
