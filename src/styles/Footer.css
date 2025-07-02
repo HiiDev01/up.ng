@@ -1,0 +1,55 @@
+.footer{
+  width: 100%;
+  padding: 3% 8% 1% 8%;
+  background-color: var(--primary);
+  box-shadow: 2px 0px 5px var(--box-shadow);
+}
+.footer .logo{
+  width: auto;
+}
+
+.footer .logo h1{
+  font-family: var(--font-four);
+  font-size: 2rem;
+  line-height: 70px;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: var(--light-primary);
+}
+.footer .logo h1 span{
+  text-transform: lowercase;
+  color: var(--main);
+}
+.footer  p{
+  width: 70%;
+  font-size: 0.85rem;
+  word-break: break-all;
+  font-family: var(--font-four);
+  color: var(--light-text);
+  line-height: 1.5;
+  margin: 0px 0px 15px 0px;
+}
+.footerPriCon > div{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0px 0px 5px 0px;
+}
+.footerPriCon > div a{
+  display: inline-block;
+  font-family: var(--font-four);
+  color: var(--text);
+  font-weight: 400;
+  text-transform: capitalize;
+  text-decoration: underline;
+  font-size: 0.8rem;
+}
+.footerPriCon p{
+  font-size: 0.85rem;
+  word-break: break-all;
+  font-family: var(--font-four);
+  color: var(--light-text);
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0px 0px 15px 0px;
+}

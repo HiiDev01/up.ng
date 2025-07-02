@@ -7,16 +7,18 @@ import LatestBlogCard from '../components/LatestBlogCard';
 import '../styles/Home.css'
 import LearningCards from '../components/LearningCards';
 import FeaturedCourses from '../components/FeaturedCourses';
-import Rating from '../components/Rating';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Reviews from '../components/Reviews';
+import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [homeBlog, setHomeBlogs] = useState([]);
   const [courses, setCourses] = useState([])
   const [error, setError] = useState(null);
-  const [reviews, setReviews] = useState([])
+  const [reviews, setReviews] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [popUpposition, setPopUpPosition] = useState({x: 0, y: 0});
+  const navigate = useNavigate()
   const latestBlog = homeBlog[1];
   const mainCourse = courses.slice(0, 6)
   const featuredCourse = courses.slice(6, 10);
@@ -74,42 +76,21 @@ const Home = () => {
       }
     }
     fetchReview();
-  }, [])
+  }, []);
 
-  var settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
+  const handleClick = (e) =>{
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    setPopUpPosition({
+      X: rect.right + 10,
+      x: rect.top + window.scrollY,
+    });
+
+
+    setSelectedItem()
+  }
+
+ 
   return (
     <div className='home'>
       <header>
@@ -188,27 +169,11 @@ const Home = () => {
             <p>What are the awesome testimony from our previous student. what are they  saying about the platform after attaining their goals.</p>
           </div>
           <div className='FeedBackWrapper'>
-            <Slider {...settings}>
-            {slicedReviews.map((reviews)=>(
-              <div className='reviewCard' key={reviews.id}>
-                <div className='reviewPara'>
-                  <p>{reviews.comment}</p>
-                </div>
-                <div className='reveiwProfile'>
-                  <div className="reviewImgCon">
-                    <img src={reviews.profile} alt={reviews.author} />
-                  </div>
-                  <div>
-                    <h2>{reviews.author}</h2>
-                    <Rating rating={reviews.rating}/>
-                  </div>
-                </div>
-              </div>
-            ))}
-            </Slider>
+             <Reviews slicedReviews={slicedReviews}/>
           </div>
         </div>
       </main>
+      <Footer/>
     </div>
   )
 }
