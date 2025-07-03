@@ -1,0 +1,45 @@
+.popupCard{
+  width: 300px;
+  max-width: 300px;
+  background-color: var(--primary);
+  box-shadow: 0px 0px 2px var(--box-shadow);
+  border: 1px solid black;
+  padding: 25px;
+  border-radius: 10px;
+}
+.popupHeadCon{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.popupImgCon{
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.popupImgCon img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.popupHeadDet{
+  width: auto;
+}
+.popupHeadDet h4{
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 700;
+  font-family: var(--font-three);
+  text-transform: capitalize;
+  margin: 0px 0px 3px 0px;
+}
+.popupHeadDet p{
+  font-family: var(--font-four);
+  font-weight: 400;
+  font-size: .85rem;
+  color: var(--light-text);
+  text-transform: capitalize;
+}

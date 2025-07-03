@@ -4,11 +4,14 @@ import { FaRegHeart } from "react-icons/fa";
 import { TbClockHour4 } from "react-icons/tb";
 import { IoPlayCircleOutline } from "react-icons/io5";
 
-const FeaturedCourses = ({featuredCourse}) => {
+const FeaturedCourses = ({featuredCourse, onItemClick}) => {
   return (
     <>
       {featuredCourse.map((feature)=>(
-        <div className='featureCourses' key={feature.id}>
+        <div className='featureCourses' 
+          key={feature.id}
+          onClick={(e)=> onItemClick(feature, e)}
+         >
           <div  
             className="featureCoursesImgCon"
             style={{

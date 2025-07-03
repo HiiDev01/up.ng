@@ -1,11 +1,13 @@
 import React from 'react'
 import { FaRegHeart } from "react-icons/fa";
 
-const LearningCards = ({courses}) => {
+const LearningCards = ({courses, onItemClick}) => {
   return (
     <>
       {courses.map((course)=>(
-        <div key={course.id} className='mainLearning'>
+        <div key={course.id} 
+          onClick={(e)=> onItemClick(course, e)}
+          className='mainLearning'>
           <div className='mainLearnWrap'>
             <div className='mainLearningSub'>
               <div className="courseIcon">

@@ -10,6 +10,7 @@ import FeaturedCourses from '../components/FeaturedCourses';
 import Reviews from '../components/Reviews';
 import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
+import PopupCard from '../components/PopupCard';
 
 const Home = () => {
   const [homeBlog, setHomeBlogs] = useState([]);
@@ -18,7 +19,7 @@ const Home = () => {
   const [reviews, setReviews] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [popUpposition, setPopUpPosition] = useState({x: 0, y: 0});
-  const navigate = useNavigate()
+
   const latestBlog = homeBlog[1];
   const mainCourse = courses.slice(0, 6)
   const featuredCourse = courses.slice(6, 10);
@@ -78,18 +79,19 @@ const Home = () => {
     fetchReview();
   }, []);
 
-  const handleClick = (e) =>{
+  const handlePopup = (item, e) =>{
     const rect = e.currentTarget.getBoundingClientRect();
 
     setPopUpPosition({
-      X: rect.right + 10,
-      x: rect.top + window.scrollY,
+      x: rect.left + -50,
+      y: rect.top + window.scrollY,
     });
 
-
-    setSelectedItem()
+    setSelectedItem(item)
   }
-
+  const handlePopupClose = ()=>{
+    setSelectedItem(null)
+  }
  
   return (
     <div className='home'>
@@ -151,7 +153,12 @@ const Home = () => {
           <h2 className='mainLearningHeading'>Learning Paths</h2>
           <div className="mainLearningWrapper">
              {error && <p>{error}</p>}
-              <LearningCards courses={mainCourse}/>
+              <LearningCards courses={mainCourse} onItemClick={handlePopup}/>
+              {selectedItem && 
+                (<PopupCard 
+                  item={selectedItem} 
+                  position={popUpposition} 
+                  onClose={handlePopupClose}/>)}
           </div>
         </div>
 
@@ -159,7 +166,7 @@ const Home = () => {
           <h2 className='mainLearningHeading'>features Paths</h2>
           <div className='mainFeatureWrapper'>
             {error && <p>{error}</p>}
-            <FeaturedCourses featuredCourse={featuredCourse}/>
+            <FeaturedCourses featuredCourse={featuredCourse} onItemClick={handlePopup}/>
           </div>
         </div>
 
