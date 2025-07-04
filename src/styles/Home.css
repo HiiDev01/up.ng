@@ -331,6 +331,7 @@ header{
   height: auto;
   background-color: transparent;
   position: relative;
+  cursor: pointer;
   z-index: 2;
 }
 .mainLearnWrap{
