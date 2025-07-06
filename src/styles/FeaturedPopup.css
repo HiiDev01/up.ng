@@ -1,0 +1,115 @@
+.popupCard{
+  width: 300px;
+  max-width: 300px;
+  background-color: var(--primary);
+  box-shadow: 0px 0px 3px var(--light-text);
+  padding: 25px;
+  border-radius: 5px;
+  
+}
+.popupHeadCon{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0px 0px 15px 0px;
+}
+.popupImgCon{
+  width:40px;
+  height: 40px;
+  border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.popupImgCon img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.popupHeadDet{
+  width: auto;
+}
+.popupHeadDet h4{
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 700;
+  font-family: var(--font-three);
+  text-transform: capitalize;
+  margin: 0px 0px 5px 0px;
+}
+.popupHeadDet p{
+  font-family: var(--font-four);
+  font-weight: 400;
+  font-size: .85rem;
+  color: var(--light-text);
+  text-transform: capitalize;
+}
+.popupIntro{
+  font-size: 0.85rem;
+  font-family: var(--font-three);
+  line-height: 1.4;
+  color: var(--light-text);
+  font-weight: 400;
+  word-wrap: break-word;
+  margin: 0px 0px 20px 0px;
+}
+.popupUL{
+  width: 100%;
+  margin: 0px 0px 15px 0px;
+}
+.popupUL li{
+  font-family: var(--font-four);
+  font-size: 0.8rem;
+  color: var(--light-text);
+  font-weight: 300;
+  text-transform: capitalize;
+  line-height: 1.5;
+  margin: 0px 0px 3px 0px;
+  list-style: none;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pointIcon{
+  padding: 3px 0px 0px 0px;
+}
+.points{
+  flex: 1;
+}
+.popupFooter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.popupFooterHead{
+  width: auto;
+}
+.popupFooterHead p{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0px 0px 10px 0px;
+  color: var(--light-text);
+  font-family: var(--font-four);
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+.popupFooter button{
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: var(--light-secondary);
+  background-color: var(--deep-main);
+  border: none;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-family: var(--font-four);
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+.popupFooter button:hover{
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}

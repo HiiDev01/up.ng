@@ -8,8 +8,8 @@ const PopupCard = ({item, position, onClose}) => {
 
   const closeRef = useRef();
   useEffect(()=>{
-    const handleClose = ()=>{
-      if(closeRef.current && !closeRef.current.contains(e.traget)){
+    const handleClose = (e)=>{
+      if(closeRef.current && !closeRef.current.contains(e.target)){
         onClose();
       }
     };

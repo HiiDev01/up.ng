@@ -4,7 +4,7 @@
 }
 header{
   width: 100%;
-  height: 95vh;
+  height: 100vh;
   background: linear-gradient(to top, rgba(39, 44, 51, .9),rgba(39, 44, 51, .9)), url("/hmbg2.jpg");
   background-position: right;
   background-size: cover;
@@ -422,6 +422,8 @@ header{
   border-radius: 6px;
   background-color: var(--primary);
   box-shadow: 2px 2px 5px var(--light-primary);
+  position: relative;
+  cursor: pointer;
 }
 .featureCoursesImgCon{
   width: 100%;
@@ -576,4 +578,158 @@ header{
   text-transform: capitalize;
   font-style: normal;
   margin: 0px 0px 5px 0px;
+}
+
+
+
+/* Tablet devices (<= 1024px) */
+@media screen and (max-width: 1200px) {
+
+
+  .HeroDet h1 {
+    font-size: 3.2rem;
+  }
+
+  .HeroDet p {
+    font-size: 1.1rem;
+  }
+
+  .mainLearningWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mainFeatureWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .mainBlogItemCon {
+    flex-direction: column;
+  }
+
+  .LBlogCon {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mainFeedBackHeading p {
+    width: 80%;
+  }
+}
+
+/* Mobile devices (<= 768px) */
+@media screen and (max-width: 768px) {
+  header {
+    height: auto;
+    min-height: 80vh;
+    padding: 40px 0;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .HeroSec {
+    padding: 0 5%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .HeroDet h1 {
+    font-size: 2.2rem;
+  }
+
+  .HeroDet p {
+    font-size: 1rem;
+  }
+
+  .browseLink {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .HeroIntroCon {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mainLearningWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .mainBlogItemCon {
+    flex-direction: column;
+  }
+
+  .mainFeatureWrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    padding: 0px 10% 0px 10%;
+  }
+
+  .mainFeedBackHeading h1 {
+    font-size: 2rem;
+  }
+
+  .mainFeedBackHeading p {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .reviewPara p {
+    font-size: 0.9rem;
+    padding: 0;
+    border-left: none;
+  }
+
+  .reveiwProfile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Extra small devices (<= 480px) */
+@media screen and (max-width: 480px) {
+  .HeroDet h1 {
+    font-size: 1.8rem;
+  }
+
+  .HeroDet p {
+    font-size: 0.95rem;
+  }
+
+  .mainBlogHeading,
+  .mainLearningHeading {
+    font-size: 1rem;
+  }
+
+  .CourseDet h3,
+  .CourseDet p,
+  .courseDet h2,
+  .courseDet p {
+    font-size: 0.85rem;
+  }
+
+  .featureDet h2 {
+    font-size: 0.95rem;
+  }
+
+  .featureInfo p {
+    font-size: 0.8rem;
+  }
+
+  .mainFeedBackHeading h1 {
+    font-size: 1.6rem;
+  }
+
+  .reviewPara {
+    padding: 10px;
+  }
+
+  .reviewImgCon {
+    width: 30px;
+    height: 30px;
+  }
 }

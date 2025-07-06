@@ -11,6 +11,7 @@ import Reviews from '../components/Reviews';
 import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 import PopupCard from '../components/PopupCard';
+import FeaturedPopup from '../components/FeaturedPopup';
 
 const Home = () => {
   const [homeBlog, setHomeBlogs] = useState([]);
@@ -18,8 +19,9 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [popUpposition, setPopUpPosition] = useState({x: 0, y: 0});
-
+  const [selectedFeatured, setSelectedFeatured] = useState(null);
+  const [popUpPosition, setPopUpPosition] = useState({x: 0, y: 0});
+  const [featuredPosition, setFeaturedPosition] = useState({x: 0, y: 0})
   const latestBlog = homeBlog[1];
   const mainCourse = courses.slice(0, 6)
   const featuredCourse = courses.slice(6, 10);
@@ -81,18 +83,29 @@ const Home = () => {
 
   const handlePopup = (item, e) =>{
     const rect = e.currentTarget.getBoundingClientRect();
-
     setPopUpPosition({
       x: rect.left + -50,
       y: rect.top + window.scrollY,
     });
-
     setSelectedItem(item)
   }
   const handlePopupClose = ()=>{
     setSelectedItem(null)
   }
- 
+
+  const handleFeaturePopup = (items, e)=>{
+    const reaction = e.currentTarget.getBoundingClientRect();
+
+    setFeaturedPosition({
+      x: reaction.left + 10,
+      y: reaction.top + window.scrollY,
+    });
+
+    setSelectedFeatured(items);
+  }
+  const handleFeaturedPopupClose = ()=>{
+    setSelectedFeatured(null)
+  }
   return (
     <div className='home'>
       <header>
@@ -157,8 +170,9 @@ const Home = () => {
               {selectedItem && 
                 (<PopupCard 
                   item={selectedItem} 
-                  position={popUpposition} 
-                  onClose={handlePopupClose}/>)}
+                  position={popUpPosition} 
+                  onClose={handlePopupClose}/>
+                )}
           </div>
         </div>
 
@@ -166,7 +180,13 @@ const Home = () => {
           <h2 className='mainLearningHeading'>features Paths</h2>
           <div className='mainFeatureWrapper'>
             {error && <p>{error}</p>}
-            <FeaturedCourses featuredCourse={featuredCourse} onItemClick={handlePopup}/>
+            <FeaturedCourses featuredCourse={featuredCourse} onItemClick={handleFeaturePopup}/>
+              {selectedFeatured && 
+                (<FeaturedPopup 
+                  item={selectedFeatured} 
+                  position={featuredPosition} 
+                  onClose={handleFeaturedPopupClose}/>
+                )}
           </div>
         </div>
 

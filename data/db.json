@@ -8,7 +8,7 @@
       "isPremium": true
     }
   ],
-"courses": [
+  "courses": [
     {
       "id": 1,
       "title": "HTML Mastery Course",
@@ -19,7 +19,14 @@
       "instructor": "Jane Doe",
       "rating": 4.5,
       "hours": 1.5,
-      "numberOfLessons": 12
+      "numberOfLessons": 12,
+      "keyPoints": [
+        "Understand HTML tags and document structure",
+        "Build forms and semantic layouts",
+        "Use media and embedding content",
+        "Write clean and accessible HTML"
+      ],
+      "level": "beginner"
     },
     {
       "id": 2,
@@ -31,7 +38,14 @@
       "instructor": "John Smith",
       "rating": 4,
       "hours": 3,
-      "numberOfLessons": 15
+      "numberOfLessons": 15,
+      "keyPoints": [
+        "Create responsive designs with Flexbox and Grid",
+        "Use CSS variables and custom properties",
+        "Style elements using selectors and pseudo-classes",
+        "Add animations and transitions"
+      ],
+      "level": "beginner"
     },
     {
       "id": 3,
@@ -43,7 +57,14 @@
       "instructor": "Emily Clark",
       "rating": 3,
       "hours": 4,
-      "numberOfLessons": 20
+      "numberOfLessons": 20,
+      "keyPoints": [
+        "Understand variables, functions, and loops",
+        "Use ES6 features like arrow functions and destructuring",
+        "Manipulate the DOM with JavaScript",
+        "Handle events and asynchronous code"
+      ],
+      "level": "beginner"
     },
     {
       "id": 4,
@@ -55,7 +76,14 @@
       "instructor": "Michael Brown",
       "rating": 5,
       "hours": 2,
-      "numberOfLessons": 18
+      "numberOfLessons": 18,
+      "keyPoints": [
+        "Create components with JSX",
+        "Manage state with useState and useEffect",
+        "Pass data with props and context",
+        "Build and route single-page apps"
+      ],
+      "level": "intermediate"
     },
     {
       "id": 5,
@@ -67,7 +95,14 @@
       "instructor": "Olivia Johnson",
       "rating": 3.5,
       "hours": 4,
-      "numberOfLessons": 16
+      "numberOfLessons": 16,
+      "keyPoints": [
+        "Understand file-based routing in Next.js",
+        "Implement server-side rendering (SSR)",
+        "Use API routes and middleware",
+        "Optimize performance and SEO"
+      ],
+      "level": "intermediate"
     },
     {
       "id": 6,
@@ -79,7 +114,14 @@
       "instructor": "Liam Davis",
       "rating": 5,
       "hours": 3,
-      "numberOfLessons": 14
+      "numberOfLessons": 14,
+      "keyPoints": [
+        "Set up a Node.js server with Express",
+        "Build RESTful APIs",
+        "Connect to a database (MongoDB or MySQL)",
+        "Handle requests, responses, and middleware"
+      ],
+      "level": "advance"
     },
     {
       "id": 7,
@@ -91,7 +133,14 @@
       "instructor": "Sophia Lee",
       "rating": 4,
       "hours": 4,
-      "numberOfLessons": 13
+      "numberOfLessons": 13,
+      "keyPoints": [
+        "Use types and interfaces",
+        "Refactor JavaScript to TypeScript",
+        "Work with generics and enums",
+        "Configure and compile TypeScript projects"
+      ],
+      "level": "intermediate"
     },
     {
       "id": 8,
@@ -103,7 +152,14 @@
       "instructor": "Noah Wilson",
       "rating": 3.5,
       "hours": 2,
-      "numberOfLessons": 10
+      "numberOfLessons": 10,
+      "keyPoints": [
+        "Set up and connect to Supabase",
+        "Implement user authentication",
+        "Use real-time database features",
+        "Upload and manage files with storage"
+      ],
+      "level": "advance"
     },
     {
       "id": 9,
@@ -115,7 +171,14 @@
       "instructor": "Ava Martinez",
       "rating": 4,
       "hours": 4,
-      "numberOfLessons": 11
+      "numberOfLessons": 11,
+      "keyPoints": [
+        "Integrate Firebase Authentication",
+        "Use Firestore for realtime data",
+        "Host web apps on Firebase",
+        "Send push notifications"
+      ],
+      "level": "advance"
     },
     {
       "id": 10,
@@ -127,7 +190,14 @@
       "instructor": "Ethan Garcia",
       "rating": 4.5,
       "hours": 3,
-      "numberOfLessons": 17
+      "numberOfLessons": 17,
+      "keyPoints": [
+        "Write PHP scripts for web pages",
+        "Process form data securely",
+        "Work with sessions and cookies",
+        "Connect to MySQL databases"
+      ],
+      "level": "intermediate"
     }
   ],
   "lessons": [

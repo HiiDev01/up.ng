@@ -9,6 +9,7 @@
   z-index: 9;
   background-color: transparent;
   transition:  background-color 0.2s ease;
+  border-bottom: 0.2px solid rgba(85, 85, 85, 0.329);
 }
 .scrolled{
   background-color: var(--secondary);
@@ -93,4 +94,103 @@
   background-color: var(--primary);
   color: var(--main);
   transition:  color 0.3s ease;
+}
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 1200px){
+  .nav{
+    top: 0;
+    position: fixed;
+    background-color: var(--secondary);
+  }
+  .navitemCon{
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 40px;
+    position: absolute;
+    right: 0;
+    top: 70px;
+    background-color: white;
+    width: 50%;
+    height: 100dvh;
+    padding: 30px 30px 30px  30px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .navitemCon.show{
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  .navitemOne{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .navitemOne a{
+    display: block;
+    margin: 0px 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: var(--font-four);
+    text-decoration: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 70px;
+    color: var(--text);
+    cursor: pointer;
+    transition:  color 0.2s ease;
+  }
+  .navitemOne a:hover{
+    color: var(--main);
+    transition:  color 0.2s ease;
+  }
+  .navitemTwo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .navitemTwo a{
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-family: var(--font-three);
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--main);
+    transition:  color 0.3s ease;
+    cursor: pointer;
+  }
+  .navitemTwo a:nth-child(1):hover{
+    color: var(--main);
+    transition:  color 0.3s ease;
+  }
+  .navitemTwo a:nth-child(2){
+    border: 1px solid var(--main);
+    padding: 9px 16px;
+    border-radius: 5px;
+    color: var(--main);
+    transition:  color 0.3s ease;
+  }
+  .navitemTwo a:nth-child(2):hover{
+    background-color: var(--primary);
+    color: var(--main);
+    transition:  color 0.3s ease;
+  }
+  .hamburger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

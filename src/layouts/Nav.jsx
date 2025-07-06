@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { MdPeopleOutline } from "react-icons/md";
 import { IoMdUnlock } from "react-icons/io";
+import { FaTimes } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 import '../styles/Nav.css'
 import { Link } from 'react-router-dom';
 
@@ -16,7 +18,11 @@ const navItem = [
 ]
 const Nav = () => {
   const [isScrolled, setIsScrolled] = useState(true);
+  const [toggle, setToggle] = useState(false)
 
+  const toggleHamburger = ()=>{
+    setToggle(prev=>!prev);
+  }
   useEffect(()=>{
     const handleScroll = ()=>{
       const scrollTop = window.scrollY
@@ -33,7 +39,7 @@ const Nav = () => {
       <div className="logo">
         <h1>up.<span>ng</span></h1>
       </div>
-      <div className='navitemCon'>
+      <div className={`navitemCon ${toggle ? 'show' : ''}`}>
         <div className='navitemOne'>
           {navItem.map((item)=>(
             <a href={item.path} key={item.id}>
@@ -50,6 +56,16 @@ const Nav = () => {
             get started
           </a>
         </div>
+      </div>
+      <div 
+         className={`hamburger ${toggle ? 'open' : ''}`}
+         onClick={toggleHamburger}
+      >
+        {toggle ? (
+          <FaTimes size={30} color='var(--light-primary)'/>
+        ):(
+          <GiHamburgerMenu size={30} color= 'var(--light-primary)'/>
+        )}
       </div>
     </div>
   )
