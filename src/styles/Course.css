@@ -12,12 +12,26 @@
   display: flex;
   align-items: flex-start;
   border: 1px solid red;
+  gap: 40px;
 }
 .CourseItemOne{
   flex: 1;
   border: 4px solid green;
+  padding: 2% 5%;
 }
 .CourseItemTwo{
   width: 25%;
   border: 2px solid blue;
+}
+.CourseHeading{
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.CourseSortCon{
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

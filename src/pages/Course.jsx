@@ -15,7 +15,7 @@ const Course = () => {
         <div className="CourseItemOne">
           <div className='CourseHeading'>
             <p>Displaying 4 out of 10 courses</p>
-            <div>
+            <div className='CourseSortCon'>
               <div>
                 <p>sort by</p>
                 <select name="" id="">
@@ -36,7 +36,7 @@ const Course = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="CourseItemTwo"></div>
       </div>
     </div>
