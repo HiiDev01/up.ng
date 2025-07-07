@@ -62,7 +62,7 @@ const Home = () => {
       }
     }
     fetchCourse()
-  }, [])
+  }, []);
 
   useEffect(()=>{
     const fetchReview = async ()=>{

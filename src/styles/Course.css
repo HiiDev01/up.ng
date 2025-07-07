@@ -1,6 +1,5 @@
 .course{
   width: 100%;
-  height: 100vh;
 }
 
 .navBox{
@@ -13,25 +12,71 @@
   align-items: flex-start;
   border: 1px solid red;
   gap: 40px;
+  background-color: var(  --light-secondary);
 }
 .CourseItemOne{
   flex: 1;
   border: 4px solid green;
-  padding: 2% 5%;
-}
-.CourseItemTwo{
-  width: 25%;
-  border: 2px solid blue;
+  padding: 2% 10%;
 }
 .CourseHeading{
   width: 100%;
-  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0px 0px 20px 0px;
 }
-.CourseSortCon{
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.CourseHeading p{
+  font-size: .9rem;
+  color: var(--light-text);
+  font-family: var(--font-three);
+  text-transform: capitalize;
+  font-weight: 400;
+}
+.searchCourseCon{
+  width: 50%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--primary);
+  box-shadow: 0px 0px 2px var(--box-shadow);
+}
+.searchCourseCon input{
+  width: 100%;
+  padding: 15px 15px;
+  font-size: 1rem;
+  color: var(--text);
+  font-family: var(--font-three);
+  font-weight: 400;
+  outline: none;
+  border: none;
+}
+
+.mainLearningHeading{
+  font-size: 1rem;
+  font-family: var(--font-three);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--text);
+  font-style: normal;
+  word-spacing: 3px;
+  position: relative;
+  margin: 0px 0px 20px 0px;
+}
+.mainLearningHeading::before{
+  position: absolute;
+  content: "";
+  width: 80%;
+  height: 1.2px;
+  background-color: var(--light-primary);
+  top: 50%;
+  right: 0%;
+}
+.mainCourseCon{
+
+}
+.cousresGrid{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+  margin: 0px 0px 30px 0px;
 }
