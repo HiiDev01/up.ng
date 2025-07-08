@@ -4,10 +4,12 @@ import '../styles/Course.css';
 import { MdOutlineSettingsInputComponent } from "react-icons/md";
 import FeaturedCourses from '../components/FeaturedCourses';
 import Pagination from '../components/Pagination';
+import FeaturedPopup from '../components/FeaturedPopup';
 
 
 const Course = () => {
   const [course, setCourses] = useState([]);
+  const [error, setError] = useState(null);
   const slicedCourse = course.slice(0, 4);
   const totalPost = course.slice(3)
   /*const otherCourse = course.slice(3);*/
@@ -16,6 +18,8 @@ const Course = () => {
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
   const currentPost = totalPost.slice(firstPostIndex, lastPostIndex)
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [popUpPosition, setPopUpPosition] = useState({x: 0, y: 0});
 
 
   useEffect(()=>{
@@ -35,7 +39,23 @@ const Course = () => {
         }
       }
       fetchCourse()
-    }, [])
+  }, []);
+
+  const handlePopup = (item, e) =>{
+    const rect = e.currentTarget.getBoundingClientRect();
+    const newPosition = {
+      x: rect.left + -50,
+      y: rect.top + window.scrollY,
+    };
+    setPopUpPosition(newPosition);
+    setSelectedItem(item)
+    console.log('popup position:', newPosition);
+
+  }
+  const handlePopupClose = ()=>{
+    setSelectedItem(null)
+  }
+
   return (
     <div className='course'>
       <div className='navBox'>
@@ -62,9 +82,21 @@ const Course = () => {
             <div className='mainCourseCon'>
               <h2 className='mainLearningHeading'>other Courses</h2>
               <div className='cousresGrid'>
-                 <FeaturedCourses featuredCourse={currentPost}/>
+                 <FeaturedCourses featuredCourse={currentPost}  onItemClick={handlePopup}/>
+                  {selectedItem && (
+                    <FeaturedPopup  
+                       item={selectedItem} 
+                       position={popUpPosition} 
+                       onClose={handlePopupClose}
+                    />
+                  )}
               </div>
-              <Pagination totalPost={totalPost.length} postPerPage={postPerPage} setCurrentPage={setCurrentPage}/>
+              <Pagination 
+                totalPost={totalPost.length} 
+                postPerPage={postPerPage} 
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
             </div>
           </main>
         </div>

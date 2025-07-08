@@ -1,0 +1,16 @@
+button{
+  padding: 2px;
+  font-family: var(--font-three);
+  margin: 0px 5px 0px 5px;
+  font-weight: 500;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  border: 1px solid var(--light-primary);
+  border-radius: 3px;
+}
+.active{
+  color: var(--primary);
+  background-color: var(--main);
+
+}

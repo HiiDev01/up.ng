@@ -10,7 +10,7 @@ const FeaturedCourses = ({featuredCourse, onItemClick}) => {
       {featuredCourse.map((feature)=>(
         <div className='featureCourses' 
           key={feature.id}
-          onClick={(e)=> onItemClick(feature, e)}
+          onClick={(e)=> onItemClick && onItemClick(feature, e)}
          >
           <div  
             className="featureCoursesImgCon"
