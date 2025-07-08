@@ -417,71 +417,7 @@ header{
   justify-content: space-between;
   gap: 30px;
 }
-.featureCourses{
-  flex: 1;
-  border-radius: 6px;
-  background-color: var(--primary);
-  box-shadow: 2px 2px 5px var(--light-primary);
-  position: relative;
-  cursor: pointer;
-}
-.featureCoursesImgCon{
-  width: 100%;
-  height: 150px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  margin: 0px 0px 0px 0px;
-}
-.featureDet{
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 10px;
-  border-bottom: .3px solid var(--box-shadow);
-}
-.featureDet h2{
-  font-size: 1.05rem;
-  font-family: var(--font-three);
-  font-weight: 700;
-  color: var(--text);
-  text-transform: capitalize;
-  margin: 0px 0px 3px 0px;
-}
-.featureDet p{
-  font-family: var(--font-four);
-  font-weight: 400;
-  color: var(  --light-text);
-  font-size: .85em;
-  font-style: normal;
-  text-transform: capitalize;
-  margin: 0px 0px 3px 0px;
-}
-.featureDet button{
-  border: none;
-  background-color: transparent;
-  color: var(--light-primary);
-}
-.featureInfo{
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 12px  10px;
-  border-bottom: .3px solid var(--box-shadow);
-}
-.featureInfo p{
-  display: flex;
-  align-items: center;
-  font-family: var(--font-four);
-  font-weight: 400;
-  color: var(--light-text);
-  font-size: .85rem;
-}
-.featureInfo p span{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0px 5px 0px 0px;
-}
+
 .mainFeedBackCon{
   width: 100%;
   padding: 30px 6% 3% 6%;

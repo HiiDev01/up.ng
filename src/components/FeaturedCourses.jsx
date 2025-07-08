@@ -1,5 +1,6 @@
 import React from 'react'
 import Rating from './Rating'
+import '../styles/FeaturedCourses.css';
 import { FaRegHeart } from "react-icons/fa";
 import { TbClockHour4 } from "react-icons/tb";
 import { IoPlayCircleOutline } from "react-icons/io5";

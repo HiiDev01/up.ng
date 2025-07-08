@@ -44,8 +44,8 @@ const Course = () => {
   const handlePopup = (item, e) =>{
     const rect = e.currentTarget.getBoundingClientRect();
     const newPosition = {
-      x: rect.left + -50,
-      y: rect.top + window.scrollY,
+      x: rect.left + -100,
+      y: rect.top  + window.scrollY,
     };
     setPopUpPosition(newPosition);
     setSelectedItem(item)
@@ -79,9 +79,9 @@ const Course = () => {
               </div>
             </div>
 
-            <div className='mainCourseCon'>
+            <div className='otherCourseCon'>
               <h2 className='mainLearningHeading'>other Courses</h2>
-              <div className='cousresGrid'>
+              <div className='otherCousresGrid'>
                  <FeaturedCourses featuredCourse={currentPost}  onItemClick={handlePopup}/>
                   {selectedItem && (
                     <FeaturedPopup  
