@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Pagination.css'
+import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa";
 
 const Pagination = ({totalPost,postPerPage, setCurrentPage, currentPage}) => {
   let pages = [];
@@ -7,20 +8,22 @@ const Pagination = ({totalPost,postPerPage, setCurrentPage, currentPage}) => {
     pages.push(i);
   }
   return (
-    <>
+    <div className='pagination'>
+      <p><FaAngleDoubleLeft size={16}/></p>
      {pages.map((page, index)=>{
       return (
-      <button 
-        key={index} 
-        onClick={()=> setCurrentPage(page)}
-        className={page == currentPage ? 'active' : ''}
-        >
-        
-         {page}
-      </button> 
+        <button 
+          key={index} 
+          onClick={()=> setCurrentPage(page)}
+          className={page == currentPage ? 'active' : ''}
+          >
+          
+           {page}
+        </button> 
       )
      })}
-    </>
+     <p><FaAngleDoubleRight size={16}/></p>
+    </div>
   )
 }
 
