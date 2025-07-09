@@ -1,5 +1,6 @@
 .featureCourses{
   flex: 1;
+  min-width: auto;
   border-radius: 6px;
   background-color: var(--primary);
   box-shadow: 2px 2px 5px var(--light-primary);
@@ -62,4 +63,16 @@
   align-items: center;
   justify-content: center;
   margin: 0px 5px 0px 0px;
+}
+
+@media screen and (max-width: 1200px){
+  .featureCourses{
+    flex: 1;
+    min-width: 273.33px;
+    border-radius: 6px;
+    background-color: var(--primary);
+    box-shadow: 2px 2px 5px var(--light-primary);
+    position: relative;
+    cursor: pointer;
+ }
 }

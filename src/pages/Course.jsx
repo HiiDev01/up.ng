@@ -20,6 +20,13 @@ const Course = () => {
   const currentPost = totalPost.slice(firstPostIndex, lastPostIndex)
   const [selectedItem, setSelectedItem] = useState(null);
   const [popUpPosition, setPopUpPosition] = useState({x: 0, y: 0});
+  const [searchQuery, setSearchQuery] = useState('');
+
+
+  const filteredItem = course.filter(c =>
+    c.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    c.heading.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
 
   useEffect(()=>{
@@ -50,7 +57,6 @@ const Course = () => {
     setPopUpPosition(newPosition);
     setSelectedItem(item)
     console.log('popup position:', newPosition);
-
   }
   const handlePopupClose = ()=>{
     setSelectedItem(null)
@@ -67,7 +73,11 @@ const Course = () => {
           <div className='CourseHeading'>
             <p>Displaying 4 out of 10 courses</p>
             <div className='searchCourseCon'>
-              <input type="text"  placeholder='Browse all  course'/>
+              <input  
+                 type="text"  
+                 placeholder='Browse all  course'
+                 value={searchQuery}
+                 onChange={(e) => setSearchQuery(e.target.value)}/>
             </div>
           </div>
 
@@ -82,7 +92,10 @@ const Course = () => {
             <div className='otherCourseCon'>
               <h2 className='mainLearningHeading'>other Courses</h2>
               <div className='otherCousresGrid'>
-                 <FeaturedCourses featuredCourse={currentPost}  onItemClick={handlePopup}/>
+                 <FeaturedCourses 
+                   featuredCourse={searchQuery ? filteredItem : currentPost} 
+                   onItemClick={handlePopup}
+                 />
                   {selectedItem && (
                     <FeaturedPopup  
                        item={selectedItem} 

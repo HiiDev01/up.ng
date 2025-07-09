@@ -1,6 +1,10 @@
 .pagination{
   display: flex;
   align-items: center;
+  gap: 5px;
+}
+.pagination p{
+  color: var(--light-primary);
 }
 button{
   padding: 2px;
